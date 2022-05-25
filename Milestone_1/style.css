@@ -1,0 +1,173 @@
+@charset "UTF-8";
+
+article,aside,footer, header, main, nav, section{
+		display:block;
+}
+html,head, body, h1, li, a, p, nav, main, aside, img, section, footer,article{
+	padding:0px;
+	margin:0px;
+}
+
+#left-nav{
+	float:left;
+	padding-bottom:0px;
+}
+
+ul li{
+	list-style-type:none;
+}
+
+#right-nav{
+	float:right;
+}
+
+#right-nav li{
+	display: inline;
+	margin: 10px;
+	bottom:5px;
+}
+
+header{
+	position:relative;
+	background-color:#273746;
+	color:#FDFBFC;
+	height:100px;
+	padding-top:5px;
+	top:0;
+	bottom:0;
+	left:0;
+	right:0;
+	line-height:15px;
+}
+
+header h1{
+	text-align:center-left;
+	margin-left:105px;
+}
+
+a{
+	text-decoration:none;
+	color:#FDFBFC;
+}
+
+nav{
+	position:absolute;
+	float:left;
+	background-color:#3B5B78;
+	color:#FDFBFC;
+	width:100%;
+}
+
+body{
+	height:100%;
+	width:100%;
+}
+
+main{
+	height:90%;
+	vertical-align:bottom;
+}
+section{
+	position:fixed;
+	top:35%;
+	left:25%;
+	background-color:#ffffff;
+}
+
+article{
+	background-color:#ffffff;
+	color:#273746;
+	margin-bottom:50px;
+}
+
+.Lside{
+	float:left;
+}
+article a{
+	color:#3B5B78;
+}
+
+
+aside{
+	float:right;
+	text-align:top;
+	margin-top:70px;
+	padding:20px;
+	line-height:20px;
+}
+
+
+.button{
+	border:none;
+	padding:2px;
+	border-radius:3px;
+	border-color:none;
+	background-color:#000000;
+	color:#ffffff;
+	margin:1px;
+}
+
+#buttonYes{
+	background-color:#B6E577;
+}
+
+#buttonNo{
+	background-color:#FC5844;
+}
+
+#buttonMaybe{
+	background-color:#6EBFFE;
+}
+
+table{
+	border-collapse:collapse;
+	width:150%;
+	margin:2px;
+}
+
+table,th,td{
+	border:1px solid gray;
+	padding:2px;
+	text-align:left;
+	line-height:25px;
+}
+
+td ul li{
+	display:inline;
+}
+
+#buttonT{
+	background-color:#000000;
+	color:#ffffff;
+	padding:3px;
+	margin:5px;
+}
+
+footer{
+	position:fixed;
+	clear: both;
+	background-color:#273746;
+	color:#FDFBFC;
+	bottom:0;
+	padding:2px 2px;
+	height:40px;
+	width:100%;
+	line-height:15px;
+}
+
+#right-footer{
+	float:right;
+}
+
+#fbpos, #twitterpos{
+	float:right;
+	/* display:inline; */
+	margin:1px 5px;
+	padding-right:2px;
+	line-height:5px;
+}
+
+footer ul li{
+	display:inline;
+	margin:5px;
+}
