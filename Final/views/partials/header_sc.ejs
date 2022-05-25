@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="/assets/stylesheets/style.css">
+    </head>
+<header>
+    <ul>
+        <li><a href='/'> 
+        <img id="logo-style" src="/assets/images/logo.jpg" alt="logo"></a></li>
+        <li><h1 id="title-style">Creative Design</h1></li>
+    </ul>
+    <ul id="right-nav">
+        <% if(typeof userInvite !== 'undefined' && userInvite.length !== 0){ %>
+            <% console.log('userInvite.length = ', userInvite.length); %>
+            <li id="notification-header-style"><a href='/user/notification'>You have pending invitations!</a></li>
+        <%}%>
+        <li><a href='/user/newConnection'>Start a new connection</a></li>
+        <li><a href='/user/savedConnections'>My Connections</a></li>
+        <li><a href='/user/signout'>Sign-out</a></li>
+    </ul>
+</header>
+</html>

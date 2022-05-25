@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Invite</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="/assets/stylesheets/style.css">
+    </head>
+
+    <body>
+        <% if(typeof userData != 'undefined'){ %>
+			<%- include('partials/header_sc.ejs') -%>
+			<%- include('partials/nav_sc.ejs') -%>
+		<%} else{ %>
+			<%- include('partials/header.ejs') -%>
+			<%- include('partials/nav.ejs') -%>
+        <%} %>
+        <main id="invite-connection-main">
+            <% if(typeof users != 'undefined'){ %>
+                <div id="invite-div">
+                    <h2 id="invite-title">Invite people to your event!</h2>
+                        <form id="invite-form" method="POST" action="/user/invite/<%= conn.connectionID %>">
+                            <% for(var i=0; i<users.length; i++){ %>
+                                <% if(users[i].userID !== userData.userID){ %>
+                                    <input type="checkbox" name="user" value="<%= users[i].userID %>"/><label><%= users[i].firstName +'\xa0'+ users[i].lastName %></label>
+                                <%} %>
+                            <%} %>
+                            
+                            <input type="submit" name="invite" id="invite-button-style" value="Invite"/>
+                        </form>
+                </div>
+
+                <div id="invites-sent-message">
+                    <% if(typeof inviteSent != 'undefined'){ %> 
+                        <p> Invites sent! </p>
+                    <%} %>
+                </div>
+            <%} %>
+        </main>
+        <%- include('partials/footer.ejs') -%> 
+    </body>
+</html>
