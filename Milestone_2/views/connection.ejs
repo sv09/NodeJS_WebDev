@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang = "en">
+
+	<head>
+		<meta charset = "UTF-8">
+		<title>Connection</title>
+		<link rel="stylesheet" type="text/css" href="/assets/stylesheets/style.css">
+		<!--[if lt IE 9]>
+		<script>
+			document.createElement("article");
+			document.createElement("aside");
+			document.createElement("footer");
+			document.createElement("header");
+			document.createElement("section");
+			document.createElement("nav");
+			document.createElement("main");
+		</script>
+		<![end if]-->
+	</head>
+	
+	<body>
+		<%- include('partials/header.ejs') -%>
+		<%- include('partials/nav.ejs') -%>
+		<main>
+			<section id="connection-style">
+				<article id=connectionDetail1-style>
+					<h2><%= connection.connectionName %></h2>
+					<ul>
+						<li id="connectionImg-style">
+						<img src="/assets/images/color.jpg" alt="eventlogo" height="110" width="170"></li>
+					</ul>
+					<ul id="connectionInfo-style">
+						<li>Hosted by <%= connection.host %></li>
+						<li><%= connection.date %></li>
+						<li><%= connection.time %></li>
+						<li><%= connection.location %></li>
+					</ul>
+				</article>
+				<article id="connectionDetail2-style">
+					<h2>Details</h2>
+					<p id="text-wrap"><%= connection.detail %></p>
+				</article>
+			</section>
+		</main>	
+		<aside id="rsvp-style">
+			<p>Are you going? 3 people going</p>
+			<div>
+				<a href = '/savedConnections' class="button" id="buttonYes">Yes</a>
+				<a href = '/savedConnections' class="button" id="buttonNo">No</a>
+				<a href='/savedConnections' class="button" id="buttonMaybe">Maybe</a>
+			</div>
+		</aside>	
+		<%- include('partials/footer.ejs') -%>
+	</body>	
+</html>

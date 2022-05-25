@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang = "en">
+
+	<head>
+		<meta charset = "UTF-8">
+		<title>savedConnections</title>
+		<link rel="stylesheet" type="text/css" href="/assets/stylesheets/style.css">
+		<!--[if lt IE 9]>
+		<script>
+			document.createElement("article");
+			document.createElement("aside");
+			document.createElement("footer");
+			document.createElement("header");
+			document.createElement("section");
+			document.createElement("nav");
+			document.createElement("main");
+		</script>
+		<![end if]-->
+	</head>
+	
+	<body>
+		<%- include('partials/header_sc.ejs') -%>
+		<%- include('partials/nav.ejs') -%>
+		<main>
+			<section>
+				<h3 id="savedConnh3-style">Jenn's Connections</h3>
+				<table>
+					<tr>
+						<th>Connection</th>
+						<th>Category</th>
+						<th>Going?</th>
+						<th>Actions</th>
+					</tr>
+					<tr>
+						<td>Color Theory</td>
+						<td>Hand Tools</td>
+						<td>Yes</td>
+						<td>
+							<!-- Routing Update button to connections page as connection page now requires parameters to be passed dynamically -->
+							<a href='/connections' class="button">Update</a>		
+							<a href='/savedConnections' class="button">Delete</a>
+						</td>
+					</tr>
+					<tr>
+						<td>Prototyping</td>
+						<td>Digital Tools</td>
+						<td>Maybe</td>
+						<td>
+							<a href='/connections' class="button">Update</a>
+							<a href='/savedConnections' class="button">Delete</a>
+						</td>
+					</tr>
+				</table>
+			</section>
+		</main>
+		<%- include('partials/footer.ejs') -%>		
+	</body>
+</html>
