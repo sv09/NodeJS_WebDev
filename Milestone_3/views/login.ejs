@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>login</title>
+        <link rel="stylesheet" type="text/css" href="/assets/stylesheets/style.css">
+    </head>
+
+    <body>
+        <!-- Header and Navigation bar views when a user is logged in -->
+        <% if(typeof userData != 'undefined'){ %>
+			<%- include('partials/header_sc.ejs') -%>
+            <%- include('partials/nav_sc.ejs') -%>
+        <!-- Header and Navigation bar views when a user is not logged in -->
+		<%} else{ %>
+			<%- include('partials/header.ejs') -%>
+			<%- include('partials/nav.ejs') -%>
+		<%} %>
+        <main class='login-main'>
+            <h2>Welcome to Creative Design!</h2>
+            <p>Please enter your username and password to login</p>
+            <form id='login' method="POST" action="/user/savedConnections">
+                <label for ="username" >Username</label>
+                <input type="text" name="username" id="username"/>
+                <label for ="password" >Password</label>
+                <input type="text" name="password" id="password"/>
+                <input type="submit" name="Login" id="loginButton-style" class="button" value="Login"/>
+            </form>
+        </main>
+        <%- include('partials/footer.ejs') -%> 
+    </body>
+</html>

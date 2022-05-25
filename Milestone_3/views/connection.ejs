@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang = "en">
+
+	<head>
+		<meta charset = "UTF-8">
+		<title>Connection</title>
+		<link rel="stylesheet" type="text/css" href="/assets/stylesheets/style.css">
+		<!--[if lt IE 9]>
+		<script>
+			document.createElement("article");
+			document.createElement("aside");
+			document.createElement("footer");
+			document.createElement("header");
+			document.createElement("section");
+			document.createElement("nav");
+			document.createElement("main");
+		</script>
+		<![end if]-->
+	</head>
+	
+	<body>
+		<% if(typeof userData != 'undefined'){ %>
+			<%- include('partials/header_sc.ejs') -%>
+			<%- include('partials/nav_sc.ejs') -%>
+		<%} else{ %>
+			<%- include('partials/header.ejs') -%>
+			<%- include('partials/nav.ejs') -%>
+		<%} %>
+		<main>
+			<section id="connection-style">
+				<article id=connectionDetail1-style>
+					<h2><%= connection.connectionName %></h2>
+					<ul>
+						<li id="connectionImg-style">
+						<img src="/assets/images/color.jpg" alt="eventlogo" height="110" width="170"></li>
+					</ul>
+					<ul id="connectionInfo-style">
+						<li>Hosted by <%= connection.host %></li>
+						<li><%= connection.date %></li>
+						<li><%= connection.time %></li>
+						<li><%= connection.location %></li>
+					</ul>
+				</article>
+				<article id="connectionDetail2-style">
+					<h2>Details</h2>
+					<p id="text-wrap"><%= connection.details %></p>
+				</article>
+			</section>
+		</main>	
+		<aside id="rsvp-style">
+			<p>Are you going? 3 people going</p>
+			<div id="button-align"> 
+				<% if(typeof userData != "undefined"){ %>
+					<form action= '/user/<%= connection.connectionID %>/savedConnections' method="POST">
+						<input type = "submit" name="Button" id="buttonYes" value="Yes"/>
+						<input hidden name = "connectionID" value = <%= connection.connectionID %>/>
+					</form>
+				 <%} else{ %>
+					<form action= '/user/login' method="POST">
+						<input type = "submit" name="Button" id="buttonYes" value="Yes"/>
+					</form>
+				<%} %>
+				<% if(typeof userData != "undefined"){ %>	
+					<form action= '/user/<%= connection.connectionID %>/savedConnections' method="POST">
+						<input type = "submit" name="Button" id="buttonNo" value="No"/>
+					</form>
+				<%} else{ %>
+					<form action= '/user/login' method="POST">
+						<input type = "submit" name="Button" id="buttonNo" value="No"/>
+					</form>
+				<%} %>
+				<% if(typeof userData != "undefined"){ %>
+					<form action= '/user/<%= connection.connectionID %>/savedConnections' method="POST">
+						<input type = "submit" name="Button" id="buttonMaybe" value="Maybe"/>
+					</form>
+				<%} else{ %>
+					<form action= '/user/login' method="POST">
+						<input type = "submit" name="Button" id="buttonMaybe" value="Maybe"/>
+					</form>
+				<%} %>
+			</div>
+		</aside>	
+		<%- include('partials/footer.ejs') -%>
+	</body>	
+</html>

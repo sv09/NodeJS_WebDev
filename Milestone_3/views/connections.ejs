@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang = "en">
+
+	<head>
+		<meta charset = "UTF-8">
+		<title>Connections</title>
+		<link rel="stylesheet" type="text/css" href="/assets/stylesheets/style.css">
+		<!--[if lt IE 9]>
+		<script>
+			document.createElement("article");
+			document.createElement("aside");
+			document.createElement("footer");
+			document.createElement("header");
+			document.createElement("section");
+			document.createElement("nav");
+			document.createElement("main");
+		</script>
+		<![end if]-->
+	</head>
+	
+	<body>
+		<% if(typeof userData != 'undefined'){ %>
+			<%- include('partials/header_sc.ejs') -%>
+			<%- include('partials/nav_sc.ejs') -%>
+		<%} else{ %>
+			<%- include('partials/header.ejs') -%>
+			<%- include('partials/nav.ejs') -%>
+		<%} %>
+		<main>
+			<section id="connections-style">
+					<article>
+						<% for(let[topic, topicConnections] of Object.entries(connections)) { %>
+							<% if (topicConnections.length > 0) { %>
+							<h3><%= topic %></h3>
+							<%} %>
+							<% topicConnections.forEach(connection => { %>
+								<ul>
+									<% if(typeof userData != "undefined"){ %>
+										<li><a href='/user/connections/connection/<%=connection.connectionID %>'><%= connection.connectionName %></a></li>
+									<%} else{ %>
+										<li><a href='/connections/connection/<%=connection.connectionID %>'><%= connection.connectionName %></a></li>
+									<%} %>
+								</ul>
+							<% });%>
+						<%} %>
+					</article>
+			</section>
+		</main>
+		<%- include('partials/footer.ejs') -%>
+	</body>
+</html>
