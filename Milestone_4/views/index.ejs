@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang = "en">
+
+	<head>
+		<meta charset = "UTF-8">
+		<title>Home</title>
+		<link rel="stylesheet" type="text/css" href="/assets/stylesheets/style.css">
+		<!-- [if lt IE 9]>
+		<script>
+			document.createElement("article");
+			document.createElement("aside");
+			document.createElement("footer");
+			document.createElement("header");
+			document.createElement("section");
+			document.createElement("nav");
+			document.createElement("main");
+		</script>
+		<![end if]		 -->
+	</head>
+	
+	<body>
+		<% if(typeof userData != 'undefined'){ %>
+			<%- include('partials/header_sc.ejs') -%>
+			<%- include('partials/nav_sc.ejs') -%>
+		<%} else{ %>
+			<%- include('partials/header.ejs') -%>
+			<%- include('partials/nav.ejs') -%>
+		<%} %>
+		<main>
+			<section id="home-page">
+				<h2 id="welcome-style">Welcome!</h2>
+				<p>A place where you can learn new skills, improve your existing skills, meet new people with similar interests.</p> 
+				<p>Attend and/or create events and get creative. Enjoy!</p>
+			</section>
+		</main>
+		<%- include('partials/footer.ejs') -%> 
+	</body>
+	
+</html>
