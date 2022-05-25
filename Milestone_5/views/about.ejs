@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <title>About</title>
+        <link rel="stylesheet" type="text/css" href="/assets/stylesheets/style.css">
+    </head>
+
+    <body>
+        <% if(typeof userData != 'undefined'){ %>
+			<%- include('partials/header_sc.ejs') -%>
+			<%- include('partials/nav_sc.ejs') -%>
+		<%} else{ %>
+			<%- include('partials/header.ejs') -%>
+			<%- include('partials/nav.ejs') -%>
+		<%} %>
+        <main class="about-style">
+            <h2 id="aboutHead-style">About us</h2>
+            <p>We help anyone who wants to touch up on their creative side. A group of passionate artists formed this organization 5 years ago.</p>
+            <p>Explore our programs, participate, and get creative!</p>
+        </main>
+        <%- include('partials/footer.ejs') -%> 
+    </body>
+</html>
